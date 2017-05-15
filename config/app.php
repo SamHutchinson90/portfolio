@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -176,7 +176,13 @@ return [
         // Portfolio\Providers\BroadcastServiceProvider::class,
         Portfolio\Providers\EventServiceProvider::class,
         Portfolio\Providers\RouteServiceProvider::class,
-
+        
+        //View composers
+        Portfolio\Providers\ComposerServiceProvider::class,
+        
+        //Custom helper functions
+				Portfolio\Providers\HelperServiceProvider::class,
+				
     ],
 
     /*
@@ -227,5 +233,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+		'calendar'=>[
+			'scriptdir' => '../scripts',
+		],
 
 ];

@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        
+        $schedule->call(['\Portfolio\Http\Controllers\CalendarController','RunActions'])->everyMinute();
     }
 
     /**

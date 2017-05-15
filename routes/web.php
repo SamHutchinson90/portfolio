@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	
+	return view('homepage', ["root"=>findRoot()]);
+});
+
+
+Route::post('/calendar/add', 'CalendarController@add');
+
+Route::get('/calendar/{month?}', 'CalendarController@show');
+
+
+Route::get('/oxo', function() {
+	return view('oxo'); 
 });
